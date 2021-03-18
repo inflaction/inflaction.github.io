@@ -174,6 +174,7 @@ function chatbotvoice(message){
         let finalresult = it;
         speech.text = finalresult;
 
+        emailform.style.display = "block";
         schedulepage.style.display = "none";
         loginpage.style.display = "none";
         panels.style.display = "none";
@@ -190,7 +191,7 @@ function chatbotvoice(message){
     let finalresult = cs[Math.floor(Math.random() * cs.length)];
      // add create document textbox element 
     speech.text = finalresult;
-
+    emailform.style.display = "block";
 
     schedulepage.style.display = "none";
     loginpage.style.display = "none";
@@ -254,7 +255,7 @@ function chatbotvoice(message){
 
 
 
-    if (message == "no" || message.includes('no i don\'t') ||  message.includes('no i do not')){
+    if (message == "no" || message.includes('no I don\'t') ||  message.includes('no I do not')){
 
         loginpage.style.display = "none";
         enrollpage.style.display = "none";
@@ -271,7 +272,7 @@ function chatbotvoice(message){
 
 
 
-        if (message.includes('yeah') || message.includes('yes i do') ||  message.includes('yes')){
+        if (message.includes('yeah') || message.includes('yes I do') ||  message.includes('yes')){
 
             let finalresult = chatintro;
             speech.text = finalresult;

@@ -384,7 +384,7 @@ section{
 }
 
 input[type="text"]{
-    width:100%;
+    width:80%;
     border: 1px solid #ccc;
     font-size: 1rem;
     border-radius: 5px;
