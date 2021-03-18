@@ -14,6 +14,7 @@ let loginpage = document.getElementById("loginPage");
 let gradepage = document.getElementById("gradePage");
 let startbtn = document.getElementById("recordBtn");
 let loadzug = document.getElementById("ZugPage");
+let emailform = document.getElementById("emailbox");
 
 
 
@@ -404,17 +405,14 @@ recognition.addEventListener("end", () => {
 
 submitBtn.addEventListener("click", function(){
     recognition.start();
+    panels.style.display = "none";
+     loadzug.style.display = "block";
 
 
 
               var words = [welcome,start,choices]   
           for (var i = 0; i < words.length; i++) {            // looping the array
             var msg = new SpeechSynthesisUtterance();
-            msg.volume = 1;
-
-            
-            msg.rate = 1;
-            msg.pitch = 0,0;
 
             msg.text = words[i];
             console.log('word: ' + words[i]);
