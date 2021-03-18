@@ -203,7 +203,7 @@ function chatbotvoice(message){
     }
 
 
-    if(message.includes('grades') || message.includes('my grades' || message.includes('marks') || message.includes('my marks')) ){
+    if(message.includes('grades') || message.includes('results' || message.includes('marks') || message.includes('my marks')) || message.includes('grading')){
         let finalresult = credentials;
         speech.text = finalresult;
         // window.open("http://localhost:8888/university/login.php"); // will redirect user to enroll page
