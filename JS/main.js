@@ -8,8 +8,14 @@ const popup = document.querySelector('.chat-popup');
 
 
 
+
+
 var scrolldown = document.querySelector('#scrolldown');
 // scrolldown.scrollTop = scrolldown.scrollHeight - scrolldown.clientHeight;
+
+
+
+
 
 
 
@@ -24,7 +30,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 chatBtn.addEventListener('click', ()=>{
     popup.classList.toggle('show');
-
 
 
     
@@ -49,6 +54,19 @@ enterBtn.addEventListener('click', ()=>{
 })
 
 
+
+
+
+
+// function EnrollCourse() {
+//   var site = "http://localhost:8888/university/enroll.php";
+//   document.getElementsByName('enrollpage')[0].src = site;
+// }
+
+
+// var iframe = document.createElement('enrollpage');
+// iframe.style.display = "none";
+// iframe.src = "http://localhost:8888/university/enroll.php";
 
 
 

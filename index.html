@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.1.1/dist/index.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/enroll.css">
+
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<html lang="en">
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="#">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Oxford University </title>
+
+<header>
+<h1> <strong> Welcome to Oxford University </strong> </h1>
+</header>
+<!-- 
+<div class="sidenav">
+<a href="index.php">Home</a>
+<a href="enroll.php">Enroll</a>
+<a href="grades.php">Grades</a>
+<a href="schedule.php">Academic Calendar</a>
+</div> -->
+
+
+<section>
+    <button class="chat-btn" id = "mic" >
+    <i class="material-icons"> Help </i>
+    </button>
+    <div class="chat-popup">
+    <!-- <div class="badge">1</div> -->
+     <div class="chat-area id=\'scrolldown\'">
+    <div class="income-msg">
+    <!-- <img src="images/zug.jpg" class="avatar" alt=""> -->
+    <!--<span class="msg"> Hi, How can I help you?</span> -->
+    <div class="chatarea-main">
+	<div class = "chatarea-outer"> ';
+    <button class="submit" id="recordBtn"> <i class="material-icons" style ="display:block"> Click to start Chatbot </i></button>
+    </div>
+    </div>  
+     <div class="chatbot-area" span class = "msg"> </span>
+    <!-- <button id = "mic">Speak it</button> -->
+    </div>
+    </div>  
+    </div>
+    <div class="input-area">
+    <div id="text"> </div>
+    <input type="text">
+    <button class="submit" id="enterBtn" onclick="UserMessage();"> <i class="material-icons"> send </i></button>
+    </div>
+    </div>
+    </section>
+
+
+
+
+</head>
+
+	<body>
+	<div class="warpper">
+	<div class="panels" id ="panelLoad" style ="display:block">
+	<p> This website can be navigated by clicking the Help button on the bottom right. <p>
+	<p> Our chatbot Zug, will assist and guide you through the University services.  <p>
+	</div>
+    </div>  
+    
+
+
+    <div class="container" id ="enrollPage" style ="display:none">
+        <div class="wrapper" >
+          <input class="radio" id="one" name="group" type="radio" checked>
+          <input class="radio" id="two" name="group" type="radio">
+          <input class="radio" id="three" name="group" type="radio">
+          <div class="tabs">
+          <label class="tab" id="one-tab" for="one">Information Technology BSc Honours</label>
+          <label class="tab" id="two-tab" for="two">Computer Science BSc Honours </label>
+            </div>
+          <div class="panelsEnroll">
+          <div class="panele" id="one-panel">
+            <div class="panel-title">Why study BSc Information Technology?</div>
+            <p>Our BSc Information Technology is structured in ways that map explicitly on to modern technology, and includes systems design, application development in a modern industrial strength programming language, network design and management, web-application development including both server and client side programming.!</p>
+          </div>
+          <div class="panele" id="two-panel">
+            <div class="panel-title">Why study Computer Science?</div>
+            <p>The BSc (Hons) Computer Science programme has been developed to reflect the dynamic and fast evolving nature of the computer science industry. The programme addresses the vast repertoire of computing skills and engineering concepts that are critically sought within the scientific and technological industries. The exclusive manner in which topics are undertaken within the programme enhance the fundamental understanding of systems engineering with the practical aspects of computer Development and the innovative concepts within information science.</p>
+          </div>
+          </div>
+        </div>
+        </div>
+
+
+        <div class="container" id ="schedulePage" style ="display:none">
+            <div class="row">
+                <div class="column">
+                  <img src="images/academic calendar.jpg">
+                  <!-- <img src="rocks.jpg"> -->
+                </div>
+              </div>
+        </div>
+
+
+<div class="container" id ="loginPage" style ="display:none">
+  <section id="content">
+    <form id="form_id" method="post" name="myform">
+      <h1>Login Form</h1>
+      <div>
+        <input type="text" name="username" id="username" placeholder="Username"/>
+      </div>
+      <div>
+        <input type="password" name="password" id="password" placeholder="Password"/>
+      </div>
+      <div>
+        <input type="button"  value="Login"  id = "loginBtn" />
+      </div>
+    </form><!-- form -->
+    
+
+
+  </section><!-- content -->
+</div><!-- container -->
+
+
+<div class="container" id ="gradePage" style ="display:none"> 
+<iframe src ="grades.html"> </iframe>
+
+</div>
+
+
+<div class="container" id ="ZugPage" style ="display:none">
+  <div class="row">
+    <div class="column">
+  <img src="images/newzug.png">
+</div>
+</div>
+</div>
+
+
+</div>
+
+
+
+	</body>
+
+    
+    <script src="JS/main.js"></script>
+    <script src="JS/index.js"></script> 
+
+	</html>
+
+
+
+  
+                  
+
+
+
+
+

@@ -6,6 +6,15 @@
 // const usermsg = document.querySelector('my-msg');
 
 
+// Load HTML // 
+let panels = document.getElementById("panelLoad");
+let enrollpage = document.getElementById("enrollPage");
+let schedulepage = document.getElementById("schedulePage");
+let loginpage = document.getElementById("loginPage");
+let gradepage = document.getElementById("gradePage");
+let startbtn = document.getElementById("recordBtn");
+let loadzug = document.getElementById("ZugPage");
+
 
 
 
@@ -19,7 +28,7 @@ let chatareaouter = document.querySelector('.chatarea-outer');
 //Welcome 
 let welcome = ["Blessings friend, I am the one they call Zug"];
 let start = ["I am here to guide you through these paths. Where would you like to start?"];
-let choices = ["Enroll in a Course, Grading Results , Academic Calendar or would you like to just chat?"];
+let choices = ["Enroll in a Course, Grade Results , Academic Calendar or would you like to just chat?"];
 
 
 
@@ -30,7 +39,7 @@ let it = ["You have chosen to enroll in IT internet technology, please type your
 let applicationform = ["The ravens have been sent, your application form will arrive shortly, will you be needing further assistance?"];
 
 // Grades 
-let credentials = ["I will take you there, but only your credentials can get you through."];
+let credentials = ["The Login Gate has appeared before you, only your credentials will get you through it."];
 
 // Schedule
 let schedule = ["this is the calendar of the future, praise the oracle."];
@@ -67,11 +76,14 @@ speechRecognitionList.addFromString(grammar, 1);
 
 
 
+
+
+
 const recognition = new SpeechRecognition();
 recognition.lang = 'en-US';
 // recognition.interimResults = true;
 recognition.maxAlternatives = 1;
-// recognition.continuous = true;
+recognition.continuous = true;
 
 
 
@@ -132,35 +144,77 @@ function showchatbotmsg(chatbotmsg){
 
 
 
+
+
 function chatbotvoice(message){
     const speech = new SpeechSynthesisUtterance();
     speech.text = "I didn't catch that, repeat please.";
 
     if(message.includes('course') || message.includes('enroll' || message.includes('enrol')) ){
+   
         let finalresult = enroll;
         speech.text = finalresult;
-        window.open("http://localhost:8888/university/enroll.php"); // will redirect user to enroll page
+
+
+        schedulepage.style.display = "none";
+        loginpage.style.display = "none";
+        panels.style.display = "none";
+        loadzug.style.display = "none";
+        gradepage.style.display = "none";
+
+        enrollpage.style.display = "block";
+        // window.open("http://localhost:8888/university/enroll.php"); // will redirect user to enroll page
 
         /* follow up on course selection */
     } 
     
-    if (message.includes('it') || message.includes('information') ||  message.includes('technology')){
+    if (message.includes('it') || message.includes('information') ||  message.includes('technology') || message.includes('information technology')){
         // add create document textbox element 
         let finalresult = it;
         speech.text = finalresult;
+
+        schedulepage.style.display = "none";
+        loginpage.style.display = "none";
+        panels.style.display = "none";
+        loadzug.style.display = "none";
+        gradepage.style.display = "none";
+
+        enrollpage.style.display = "block";
+ 
+
+        // document.body.appendChild(iframe);
     }
 
     if (message.includes('cs') || message.includes('computer science') ||  message.includes('science') ||  message.includes('computer')){
     let finalresult = cs[Math.floor(Math.random() * cs.length)];
      // add create document textbox element 
     speech.text = finalresult;
+
+
+    schedulepage.style.display = "none";
+    loginpage.style.display = "none";
+    panels.style.display = "none";
+    loadzug.style.display = "none";
+    gradepage.style.display = "none";
+
+    enrollpage.style.display = "block";
     }
 
 
     if(message.includes('grades') || message.includes('my grades' || message.includes('marks') || message.includes('my marks')) ){
         let finalresult = credentials;
         speech.text = finalresult;
-        window.open("http://localhost:8888/university/login.php"); // will redirect user to enroll page
+        // window.open("http://localhost:8888/university/login.php"); // will redirect user to enroll page
+
+        enrollpage.style.display = "none";
+        schedulepage.style.display = "none";
+        panels.style.display = "none";
+        loadzug.style.display = "none";
+        gradepage.style.display = "none";
+
+        loginpage.style.display = "block";
+
+        
 
 
         setTimeout(function(){              //// chatbot will speak after 7 seconds have past
@@ -176,7 +230,16 @@ function chatbotvoice(message){
     if(message.includes('calendar') || message.includes('academic' || message.includes('academic calendar') || message.includes('schedule') || message.includes('my schedule')) ){
         let finalresult = schedule;
         speech.text = finalresult;
-        window.open("http://localhost:8888/university/schedule.php"); // will redirect user to enroll page
+        // window.open("http://localhost:8888/university/schedule.php"); // will redirect user to enroll page
+
+        loginpage.style.display = "none";
+        enrollpage.style.display = "none";
+        panels.style.display = "none";
+        loadzug.style.display = "none";
+        gradepage.style.display = "none";
+        schedulepage.style.display = "block";
+
+ 
 
         setTimeout(function(){              //// chatbot will speak after 7 seconds have past
         
@@ -190,19 +253,35 @@ function chatbotvoice(message){
 
 
 
-    if (message.includes('no') || message.includes('no i don\'t') ||  message.includes('no i do not')){
+    if (message == "no" || message.includes('no i don\'t') ||  message.includes('no i do not')){
+
+        loginpage.style.display = "none";
+        enrollpage.style.display = "none";
+        panels.style.display = "none";
+        loadzug.style.display = "none";
+        gradepage.style.display = "none";
+        schedulepage.style.display = "none";
+
         let finalresult = goodbye;
         recognition.stop();
-             // add create document textbox element 
+
         speech.text = finalresult;
         }
 
 
 
         if (message.includes('yeah') || message.includes('yes i do') ||  message.includes('yes')){
+
             let finalresult = chatintro;
-                 // add create document textbox element 
             speech.text = finalresult;
+
+            loginpage.style.display = "none";
+            enrollpage.style.display = "none";
+            panels.style.display = "none";
+            loadzug.style.display = "block";
+            gradepage.style.display = "none";
+            schedulepage.style.display = "none";
+
             }
             
         
@@ -215,6 +294,13 @@ function chatbotvoice(message){
 if(message.includes('chat') || message.includes('just chat')){
     let finalresult = chatintro;
     speech.text = finalresult;
+
+    loginpage.style.display = "none";
+    enrollpage.style.display = "none";
+    panels.style.display = "none";
+    loadzug.style.display = "block";
+    gradepage.style.display = "none";
+    schedulepage.style.display = "none";
 }
 
 if(message.includes('who are you') || message.includes('who are') || message.includes('what are') ){
@@ -225,17 +311,40 @@ if(message.includes('who are you') || message.includes('who are') || message.inc
 if(message.includes('how are you') || message.includes('how are') || message.includes('are you okay') || message.includes('are you ok') || message.includes('doing ok') ){
     let finalresult = howare;
     speech.text = finalresult;
+
+
+    loginpage.style.display = "none";
+    enrollpage.style.display = "none";
+    panels.style.display = "none";
+    loadzug.style.display = "block";
+    gradepage.style.display = "none";
+    schedulepage.style.display = "none";
 }
 
-if(message.includes('i\'m ok') || message.includes('i\'m doing ok') || message.includes('alright') || message.includes('not bad') || message.includes('doing ok') ){
+if(message.includes('i\'m ok') || message.includes('i\'m doing ok') || message.includes('alright') || message.includes('not bad') || message.includes('doing okay') || message.includes('I am okay') ){
     let finalresult = answer;
     speech.text = finalresult;
+
+
+    loginpage.style.display = "none";
+    enrollpage.style.display = "none";
+    panels.style.display = "none";
+    loadzug.style.display = "block";
+    gradepage.style.display = "none";
+    schedulepage.style.display = "none";
 }
 
 
 if(message.includes('tell me a joke') || message.includes('joke')){
     let finalresult = joke1;
     speech.text = finalresult;
+
+    loginpage.style.display = "none";
+    enrollpage.style.display = "none";
+    panels.style.display = "none";
+    loadzug.style.display = "block";
+    gradepage.style.display = "none";
+    schedulepage.style.display = "none";
 
     setTimeout(function(){              //// chatbot will speak after 7 seconds have past
         
@@ -254,6 +363,13 @@ if(message.includes('bye') || message.includes('goodbye') || message.includes('s
     recognition.stop();
     let finalresult = goodbye;
     speech.text = finalresult;
+
+    loginpage.style.display = "none";
+    enrollpage.style.display = "none";
+    panels.style.display = "none";
+    loadzug.style.display = "none";
+    gradepage.style.display = "none";
+    schedulepage.style.display = "none";
 }
 
 
@@ -264,12 +380,7 @@ if(message.includes('bye') || message.includes('goodbye') || message.includes('s
 }
 
 
-// recognition.addEventListener("result",resultOfSpeechRecognition);
-// function resultOfSpeechRecognition(event){
-//     const resultIndex = event.results[0][0].transcript;
 
-
-// }
 
 recognition.onresult=function(e){
     let resultIndex = e.resultIndex;
@@ -289,12 +400,22 @@ recognition.addEventListener("end", () => {
 
 
 
-submitBtn.addEventListener("click", function(){
 
+
+submitBtn.addEventListener("click", function(){
     recognition.start();
+
+
+
               var words = [welcome,start,choices]   
           for (var i = 0; i < words.length; i++) {            // looping the array
             var msg = new SpeechSynthesisUtterance();
+            msg.volume = 1;
+
+            
+            msg.rate = 1;
+            msg.pitch = 0,0;
+
             msg.text = words[i];
             console.log('word: ' + words[i]);
             console.log('message: ' + msg.text);
@@ -306,59 +427,17 @@ submitBtn.addEventListener("click", function(){
 
 
  
-
-    
-             
-
-
-
-
-// voicebtn.addEventListener("click", function(){
-
-//     document.querySelector('#voicebtn').textContent = 'Talking';
-
-// })
-    
-
-
-        
-
-    // var x = 0;
-
-    // if(x==0) {
-    //         var words = [welcome,start,choices]             // an array of stings that the chatbot will speak, they are in an array so they are are said one after an other, and they will be in different chat sections from each other.
-    //     for (var i = 0; i < words.length; i++) {            // looping the array
-    //         var msg = new SpeechSynthesisUtterance();
-    //         msg.text = words[i];
-    //         console.log('word: ' + words[i]);
-    //         console.log('message: ' + msg.text);
-    //         chatareamain.appendChild(showchatbotmsg(msg.text));
-    //         window.speechSynthesis.speak(msg);
-    //     }
-    //  document.querySelector('#recordBtn').textContent = 'Voice Activated';
-    //  recognition.start();
-    //  recognition.continuous = true;
-    //  console.log("Activated");
-    //  x = 1;
-    // } else {
-    // document.querySelector('#recordBtn').textContent = 'Activate Voice';
-    // x = 0;
-    // }
+          
+loginBtn.addEventListener('click', ()=>{
+    loginpage.style.display = "none";
+    enrollpage.style.display = "none";
+    panels.style.display = "none";
+    loadzug.style.display = "none";
+    gradepage.style.display = "block";
+    schedulepage.style.display = "none";
+ })
 
 
 
 
-    
-    
-    
-    
 
-
-
-// function talk() {
-//     var user =document.getElementById("input-area") .value;
-//     document.getElementById("chatLog").innerHTML +=user+"<br>";
-//    if(user in know){
-//        document.getElementById("chatLog").innerHTML += know[user]+"<br>";
-//    } else{
-//        document.getElementById("chatLog").innerHTML+="I am not a genius , ask me something that I know!<br>";}}

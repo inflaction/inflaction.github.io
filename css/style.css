@@ -30,9 +30,9 @@ body {
     background-repeat: no-repeat;
     background-size:cover;
     background-attachment: fixed;
-    background-blend-mode: lighten;
     width: 100%;
     height: auto;
+    
     
 }
 
@@ -162,18 +162,6 @@ footer {
 }
 
 
-.gamecontainer{
-    margin:0 auto;
-    margin-top:60px;
- 
-    height: auto;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-}
 
 /* box used to contain information */
 
@@ -236,13 +224,10 @@ input[type=text], input[type=password] {
   
 }
 
-.container{
-    margin:auto;
-}
 
 
 /* Set a style for all buttons */
-button {
+/* button {
     background-color: grey;
     color: white;
     padding: 14px 20px;
@@ -251,7 +236,7 @@ button {
     margin:auto;
     font-size: 10px;
     align-items: center;
-}
+} */
 
 /* Add a hover effect for buttons */
 button:hover {
@@ -260,7 +245,6 @@ button:hover {
 
 
 
-/* Center the avatar image inside this container */
 
 
 /* customize columns and rows inside black-box class  */
@@ -307,14 +291,14 @@ font-size: 30px;
 .chat-btn:hover, .submit:hover, #emoji-btn:hover{
     opacity: 1;
 }
-
+/* 
 button{
     border:none;
     outline: none;
     cursor: pointer;
     font-size: 24px;
 
-}
+} */
 
 
 
@@ -428,6 +412,14 @@ input[type="text"]{
     opacity: 0.7;
 }
 
+.zug{
+
+    width: 400px;
+
+
+}
+
+
 
 .out-msg{
     display: flex;
@@ -444,6 +436,14 @@ input[type="text"]{
     box-shadow: 0 2px 5px rgba(0,0,0,0.4);
     /* word-break: break-all; */
 }
+
+iframe {
+    border: 1px solid black;
+    margin-top: -50px;
+    height: 900px;
+    width: 100%;
+}
+
 
 
 @media (max-width:500px){
@@ -478,6 +478,19 @@ input[type="text"]{
     
   }
 
+  
+.container{
+    /* position: fixed;
+    margin-top: -200px;
+    /* margin: auto; */
+     /* background-image: url("../images/degree.jfif"); */
+    height: 1000px;
+    width: 70%;
+
+    
+  }
+  
+
 
   .panels{
     background:rgba(255, 255, 255, 0.623);
@@ -506,6 +519,15 @@ input[type="text"]{
       font-size: 20px;
       font-weight: bold;
   }
+
+.wrapper{
+    width: 640px; /* Can be in percentage also. */
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+    left: 50px;
+}
 
 /* 
 
